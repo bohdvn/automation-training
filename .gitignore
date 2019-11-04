@@ -2,3 +2,7 @@
 *.log
 target/
 bin/
+
+*.iml
+.idea/
+out/
