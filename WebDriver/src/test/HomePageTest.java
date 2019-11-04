@@ -42,4 +42,4 @@ public class HomePageTest {
         String offerMessage = "udg79679@bcaoo.com looks new to us.\nWe would be happy to get to know you. Register now!";
         page.checkOfferMessage(offerMessage);
     }
-}
+} 
