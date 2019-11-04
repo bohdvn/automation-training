@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 public class HomePage {
     private final String HOMEPAGE_URL = "https://www.sixt.com";
-    private final int WAIT_TIMEOUT_SECONDS = 30;
+    private final int WAIT_TIMEOUT_SECONDS = 20;
 
     private WebDriver driver;
     private WebDriverWait wait;
