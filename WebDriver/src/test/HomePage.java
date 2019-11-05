@@ -25,19 +25,19 @@ public class HomePage {
         wait = new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS);
     }
 
-    @FindBy(xpath = "//*[@id=\"pickupStation\"]")
+    @FindBy(xpath = "//input[@id='pickupStation']")
     private WebElement pickUpLocationInput;
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/div[2]/div[1]/div/div/div/div[2]/div/span/div/div/div[2]/div/div/div[2]")
+    @FindBy(xpath = "//*[@id='root']/div/div[1]/div[2]/div[1]/div/div/div/div[2]/div/span/div/div/div[2]/div/div/div[2]")
     private WebElement locationError;
 
-    @FindBy(xpath = "//*[@id=\"pageSlideWrapper\"]/div/div[2]/form/div[1]/div/div/div/input")
+    @FindBy(xpath = "//*[@id='pageSlideWrapper']/div/div[2]/form/div[1]/div/div/div/input")
     private WebElement emailInput;
 
-    @FindBy(xpath = "//*[@id=\"pageSlideWrapper\"]/div/div[2]/form/div[1]/p")
+    @FindBy(xpath = "//*[@id='pageSlideWrapper']/div/div[2]/form/div[1]/p")
     private WebElement offerToRegister;
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/div[1]/div/div[5]/div/span")
+    @FindBy(xpath = "//*[@id='root']/div/div[1]/div[1]/div/div[5]/div/span")
     private WebElement loginButton;
 
     public void inputPickUpLocation(String pickUpLocation) {
@@ -53,21 +53,15 @@ public class HomePage {
         emailInput.submit();
         wait.until(ExpectedConditions
                 .stalenessOf(driver
-                .findElement(By.xpath("//*[@id=\"pageSlideWrapper\"]/div/div[2]/form/div[1]/h4"))));
+                        .findElement(By.xpath("//*[@id='pageSlideWrapper']/div/div[2]/form/div[1]/h4"))));
     }
 
-    public void checkErrorMessage(String errorMessage) {
-        Assert.assertTrue("Error message should be present",
-                locationError.isDisplayed());
-        Assert.assertTrue("Error message should contains " + errorMessage,
-                locationError.getText().contains(errorMessage));
+    public boolean checkErrorMessage(String errorMessage) {
+        return locationError.isDisplayed() && locationError.getText().contains(errorMessage);
     }
 
-    public void checkOfferMessage(String offerMessage) {
-        Assert.assertTrue("Offer message should be present",
-                offerToRegister.isDisplayed());
-        Assert.assertTrue("Offer message should contains " + offerMessage,
-                offerToRegister.getText().contains(offerMessage));
+    public boolean checkOfferMessage(String offerMessage) {
+        return offerToRegister.isDisplayed() && offerToRegister.getText().contains(offerMessage);
     }
 
     public void clickLoginButton() {

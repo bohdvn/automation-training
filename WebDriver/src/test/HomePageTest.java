@@ -1,10 +1,13 @@
 package test;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import static org.junit.Assert.assertTrue;
 
 public class HomePageTest {
     private WebDriver driver;
@@ -31,7 +34,7 @@ public class HomePageTest {
         String pickUpLocation = "North Korea";
         page.inputPickUpLocation(pickUpLocation);
         String errorMessage = "Sorry, but there are no SIXT stations available near North Korea!";
-        page.checkErrorMessage(errorMessage);
+        assertTrue(page.checkErrorMessage(errorMessage));
     }
 
     @Test
@@ -40,6 +43,6 @@ public class HomePageTest {
         String notFoundEmail = "udg79679@bcaoo.com";
         page.inputEmail(notFoundEmail);
         String offerMessage = "udg79679@bcaoo.com looks new to us.\nWe would be happy to get to know you. Register now!";
-        page.checkOfferMessage(offerMessage);
+        assertTrue(page.checkOfferMessage(offerMessage));
     }
 } 
