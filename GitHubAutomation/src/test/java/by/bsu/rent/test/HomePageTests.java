@@ -24,7 +24,7 @@ public class HomePageTests extends CommonConditions {
         Assert.assertTrue(page.checkTimeErrorMessage(expectedError));
     }
 
-    @Test(testName = "testcase 3: Search car at no available place")
+    @Test(testName = "testcase 3: Search car at not available place")
     public void searchCarsAtNotAvailablePlaceTest() {
         HomePage page = new HomePage(driver);
         page.openPage().fillFromParams(CarReservationCreator.withNotAvailablePlaceFromProperty()).search();

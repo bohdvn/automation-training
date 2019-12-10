@@ -79,7 +79,7 @@ public class HomePage extends AbstractPage {
             e.getPickUpDate().ifPresent(this::inputPickUpDate);
             e.getReturnDate().ifPresent(this::inputReturnDate);
         });
-        LOGGER.info("Filled cars search params.");
+        LOGGER.info("Filled cars search params");
         return this;
     }
 

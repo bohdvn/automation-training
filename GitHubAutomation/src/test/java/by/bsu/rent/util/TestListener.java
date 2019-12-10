@@ -15,14 +15,12 @@ import java.io.IOException;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
-
 public class TestListener implements ITestListener {
     private static final String SCREEN_SHOTS_PATH_NAME = ".//target/screenshots/";
     private static final String SCREEN_SHOTS_EXTENSION = ".png";
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("uuuu-MM-dd_HH-mm-ss");
 
     private Logger log = LogManager.getRootLogger();
-
 
     public void onTestStart(ITestResult iTestResult) {
 

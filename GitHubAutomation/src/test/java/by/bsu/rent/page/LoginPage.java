@@ -29,7 +29,6 @@ public class LoginPage extends AbstractPage {
     @FindBy(xpath = "//input[@value='Log in']")
     private WebElement submitButton;
 
-
     public LoginPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(this.driver, this);
@@ -47,10 +46,9 @@ public class LoginPage extends AbstractPage {
         account.getEmail().ifPresent(this::inputEmail);
         account.getPassword().ifPresent(this::inputPassword);
         submitButton.click();
-        LOGGER.info("Clicked 'Log in' button.");
+        LOGGER.info("Clicked 'Log in' button");
         return new HomePage(driver);
     }
-
 
     public void inputEmail(String email) {
         emailInput.clear();

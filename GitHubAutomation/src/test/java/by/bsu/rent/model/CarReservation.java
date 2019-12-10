@@ -8,7 +8,6 @@ public class CarReservation {
     private String placeTo;
     private ReservationDates reservationDates;
 
-
     public CarReservation(String placeFrom,
                           String placeTo,
                           ReservationDates reservationDates) {

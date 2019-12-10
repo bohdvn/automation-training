@@ -13,7 +13,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
-
 public class LoginPageTests extends CommonConditions {
     private static final String TESTDATA_CASE_9_EXPECTED_NAME = "testdata.case9.expected.name";
 
