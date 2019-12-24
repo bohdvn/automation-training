@@ -10,7 +10,7 @@ import static org.hamcrest.Matchers.is;
 
 public class SearchResultPageTests extends CommonConditions {
 //    private static final String TESTDATA_CASE_8_EXPECTED_CURRENCY = "testdata.case8.expected.currency";
-    private static final String TESTDATA_CASE_8_EXPECTED_CURRENCY = "    €\n";
+    private static final String TESTDATA_CASE_8_EXPECTED_CURRENCY = "€";
 
     @Test(testName = "testcase 8: One can change currency")
     public void changingCurrencyToEuroTest() {
@@ -18,6 +18,6 @@ public class SearchResultPageTests extends CommonConditions {
                 .openPage()
                 .changeCurrencyToEuro()
                 .getCurrentCurrency();
-        assertThat(currentCurrency, is(equalTo(TestDataReader.getTestData(TESTDATA_CASE_8_EXPECTED_CURRENCY))));
+        assertThat(currentCurrency, is(equalTo(TESTDATA_CASE_8_EXPECTED_CURRENCY)));
     }
 }

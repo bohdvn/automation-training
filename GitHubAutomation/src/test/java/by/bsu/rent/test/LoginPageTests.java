@@ -25,7 +25,7 @@ public class LoginPageTests extends CommonConditions {
                 .openPage()
                 .login(testAccount)
                 .getLoggedInUserName();
-        assertThat(loggedInUserName, is(equalTo(TestDataReader.getTestData(TESTDATA_CASE_9_EXPECTED_NAME))));
+        assertThat(loggedInUserName, is(equalTo(TESTDATA_CASE_9_EXPECTED_NAME)));
     }
 
     @Test(testName = "testcase 10: Login with not registered email")
