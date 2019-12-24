@@ -125,7 +125,7 @@ public class HomePage extends AbstractPage {
     }
 
     public String getLoggedInUserName() {
-        return "NM";
+        return "NN";
 //                loggedInUserName.getText();
     }
 
