@@ -13,7 +13,6 @@ public class HomePageTests extends CommonConditions {
     public void searchCarsForNegativeRentalPeriodTest() {
         HomePage page = new HomePage(driver);
         page.openPage().fillFromParams(new CarReservation()).search();
-//        PageError expectedError = PageErrorCreator.errorForNegativeRentalPeriodFromProperty();
         PageError expectedError = new PageError();
         Assert.assertTrue(page.checkTimeErrorMessage(expectedError));
     }
@@ -22,7 +21,6 @@ public class HomePageTests extends CommonConditions {
     public void searchCarsForRentalPeriodMoreThanYearTest() {
         HomePage page = new HomePage(driver);
         page.openPage().fillFromParams(new CarReservation()).search();
-//        PageError expectedError = PageErrorCreator.errorForRentalPeriodMoreThanYearFromProperty();
         PageError expectedError = new PageError();
         Assert.assertTrue(page.checkTimeErrorMessage(expectedError));
     }
@@ -31,7 +29,6 @@ public class HomePageTests extends CommonConditions {
     public void searchCarsAtNotAvailablePlaceTest() {
         HomePage page = new HomePage(driver);
         page.openPage().fillFromParams(new CarReservation()).search();
-//        PageError expectedError = PageErrorCreator.errorForNotAvailablePlaceFromProperty();
         PageError expectedError = new PageError();
         Assert.assertTrue(page.checkPlaceErrorMessage(expectedError));
     }
@@ -40,7 +37,6 @@ public class HomePageTests extends CommonConditions {
     public void searchCarsForCurrentPickUpDateTest() {
         HomePage page = new HomePage(driver);
         page.openPage().fillFromParams(new CarReservation()).search();
-//        PageError expectedError = PageErrorCreator.errorForCurrentPickUpDateFromProperty();
         PageError expectedError = new PageError();
         Assert.assertTrue(page.checkTimeErrorMessage(expectedError));
     }
@@ -49,7 +45,6 @@ public class HomePageTests extends CommonConditions {
     public void searchCarsForPastPickUpDateTest() {
         HomePage page = new HomePage(driver);
         page.openPage().fillFromParams(new CarReservation()).search();
-//        PageError expectedError = PageErrorCreator.errorForPastPickUpDateFromProperty();
         PageError expectedError = new PageError();
         Assert.assertTrue(page.checkTimeErrorMessage(expectedError));
     }
@@ -58,7 +53,6 @@ public class HomePageTests extends CommonConditions {
     public void searchCarsForPickUpAndReturnPlacesAcrossContinentsTest() {
         HomePage page = new HomePage(driver);
         page.openPage().fillFromParams(new CarReservation()).search();
-//        PageError expectedError = PageErrorCreator.errorForPickUpAndReturnPlacesAcrossContinentsFromProperty();
         PageError expectedError = new PageError();
         Assert.assertTrue(page.checkPlaceErrorMessage(expectedError));
     }
@@ -67,7 +61,6 @@ public class HomePageTests extends CommonConditions {
     public void searchCarsWithEmptyFieldsTest() {
         HomePage page = new HomePage(driver);
         page.openPage().fillFromParams(new CarReservation()).search();
-//        PageError expectedError = PageErrorCreator.errorForEmptyFieldsFromProperty();
         PageError expectedError = new PageError();
         Assert.assertTrue(page.checkPlaceErrorMessage(expectedError));
     }
