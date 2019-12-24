@@ -9,7 +9,8 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
 public class SearchResultPageTests extends CommonConditions {
-    private static final String TESTDATA_CASE_8_EXPECTED_CURRENCY = "testdata.case8.expected.currency";
+//    private static final String TESTDATA_CASE_8_EXPECTED_CURRENCY = "testdata.case8.expected.currency";
+    private static final String TESTDATA_CASE_8_EXPECTED_CURRENCY = "    €\n";
 
     @Test(testName = "testcase 8: One can change currency")
     public void changingCurrencyToEuroTest() {

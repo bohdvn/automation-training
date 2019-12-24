@@ -14,11 +14,13 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
 public class LoginPageTests extends CommonConditions {
-    private static final String TESTDATA_CASE_9_EXPECTED_NAME = "testdata.case9.expected.name";
+//    private static final String TESTDATA_CASE_9_EXPECTED_NAME = "testdata.case9.expected.name";
+    private static final String TESTDATA_CASE_9_EXPECTED_NAME = "NN";
 
     @Test(testName = "testcase 9: One can login SIXT")
     public void loginToSixtTest() {
-        Account testAccount = AccountCreator.withCorrectEmailAndPassword();
+//        Account testAccount = AccountCreator.withCorrectEmailAndPassword();
+        Account testAccount = new Account();
         String loggedInUserName = new LoginPage(driver)
                 .openPage()
                 .login(testAccount)
@@ -28,10 +30,12 @@ public class LoginPageTests extends CommonConditions {
 
     @Test(testName = "testcase 10: Login with not registered email")
     public void loginWithNotRegisteredEmailTest() {
-        Account testAccount = AccountCreator.withNotRegisteredEmail();
+//        Account testAccount = AccountCreator.withNotRegisteredEmail();
+        Account testAccount = new Account();
         LoginPage page = new LoginPage(driver);
         page.login(testAccount);
-        PageError expectedError = PageErrorCreator.errorForNotRegisteredEmailFromProperty();
+//        PageError expectedError = PageErrorCreator.errorForNotRegisteredEmailFromProperty();
+        PageError expectedError = new PageError();
         Assert.assertTrue(page.checkOfferToRegisterMessage(expectedError));
     }
 

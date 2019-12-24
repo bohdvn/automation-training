@@ -19,19 +19,19 @@ public class DriverSingleton {
 
     public static WebDriver getDriver() {
         if (null == driver) {
-            switch (System.getProperty(SYSTEM_PROPERTY_BROWSER)) {
-                case SYSTEM_PROPERTY_BROWSER_FIREFOX: {
-                    WebDriverManager.firefoxdriver().setup();
-                    driver = new FirefoxDriver();
-                    LOGGER.info("Created Firefox driver");
-                }
-                default: {
+//            switch (System.getProperty(SYSTEM_PROPERTY_BROWSER)) {
+//                case SYSTEM_PROPERTY_BROWSER_FIREFOX: {
+//                    WebDriverManager.firefoxdriver().setup();
+//                    driver = new FirefoxDriver();
+//                    LOGGER.info("Created Firefox driver");
+//                }
+//                default: {
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
                     LOGGER.info("Created Chrome driver");
-
-                }
-            }
+//
+//                }
+//            }
             driver.manage().window().maximize();
         }
         return driver;

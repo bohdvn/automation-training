@@ -5,6 +5,9 @@ import java.util.Objects;
 public class PageError {
     private String errorDescription;
 
+    public PageError() {
+    }
+
     public PageError(String errorDescription) {
         this.errorDescription = errorDescription;
     }
